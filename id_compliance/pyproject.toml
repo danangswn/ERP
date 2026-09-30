@@ -1,0 +1,18 @@
+[project]
+name = "id_compliance"
+authors = [
+    { name = "Distributor ERP Lite", email = "dev@distributor-erp-lite.example" },
+]
+description = "Indonesian tax compliance (e-Faktur, PPN, PPh 23) for ERPNext v15"
+requires-python = ">=3.11"
+readme = "README.md"
+license = { file = "license.txt" }
+dynamic = ["version"]
+dependencies = [
+    "frappe~=15.0",
+    "erpnext~=15.0",
+]
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
