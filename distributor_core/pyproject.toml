@@ -1,0 +1,19 @@
+[project]
+name = "distributor_core"
+authors = [
+    { name = "Distributor ERP Lite", email = "dev@distributor-erp-lite.example" },
+]
+description = "Core distributor operations layer for Indonesian distribution/wholesale SMBs on ERPNext v15"
+requires-python = ">=3.11"
+readme = "README.md"
+license = { file = "license.txt" }
+dynamic = ["version"]
+dependencies = [
+    "frappe~=15.0",
+]
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.bench.dev-dependencies]

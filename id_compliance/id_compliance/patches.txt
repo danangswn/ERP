@@ -1,0 +1,1 @@
+id_compliance.patches.setup_tax_templates

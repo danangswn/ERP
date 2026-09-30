@@ -1,0 +1,130 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:BPP23-{YYYY}-{#####}",
+ "creation": "2025-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "supplier_invoice",
+  "supplier",
+  "column_break_1",
+  "tax_base",
+  "rate",
+  "amount",
+  "section_details",
+  "bukti_potong_no",
+  "date_withheld",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "supplier_invoice",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Supplier Invoice",
+   "options": "Purchase Invoice",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "supplier_invoice.supplier",
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tax_base",
+   "fieldtype": "Currency",
+   "label": "Tax Base",
+   "options": "Company:company_currency",
+   "reqd": 1
+  },
+  {
+   "default": "2",
+   "fieldname": "rate",
+   "fieldtype": "Percent",
+   "label": "Rate (%)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "options": "Company:company_currency",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_details",
+   "fieldtype": "Section Break",
+   "label": "Bukti Potong Details"
+  },
+  {
+   "fieldname": "bukti_potong_no",
+   "fieldtype": "Data",
+   "label": "Bukti Potong No"
+  },
+  {
+   "fieldname": "date_withheld",
+   "fieldtype": "Date",
+   "label": "Date Withheld"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ID Compliance",
+ "name": "Bukti Potong PPh 23",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

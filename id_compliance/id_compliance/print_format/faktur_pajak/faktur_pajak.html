@@ -1,0 +1,70 @@
+<div class="faktur-pajak">
+	<h2 style="text-align:center;">FAKTUR PAJAK</h2>
+	<table style="width:100%; border-collapse:collapse; margin-bottom:16px;">
+		<tr>
+			<td style="width:40%;"><strong>Kode dan Nomor Seri Faktur Pajak:</strong></td>
+			<td>{{ doc.faktur_pajak_no or "-" }}</td>
+		</tr>
+		<tr>
+			<td><strong>Tanggal Faktur:</strong></td>
+			<td>{{ frappe.utils.formatdate(doc.posting_date) }}</td>
+		</tr>
+	</table>
+
+	<h4>Pihak yang melakukan transaksi (Pembeli)</h4>
+	<table style="width:100%; border-collapse:collapse; margin-bottom:16px;">
+		<tr>
+			<td style="width:40%;">NPWP</td>
+			<td>{{ doc.customer_id_npwp or "-" }}</td>
+		</tr>
+		<tr>
+			<td>Nama</td>
+			<td>{{ doc.customer_name or doc.customer }}</td>
+		</tr>
+		<tr>
+			<td>Alamat</td>
+			<td>{{ doc.address_display or "-" }}</td>
+		</tr>
+	</table>
+
+	<h4>Rincian Barang Kena Pajak / Jasa Kena Pajak</h4>
+	<table style="width:100%; border-collapse:collapse;" class="table table-bordered">
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>Nama Barang / Jasa</th>
+				<th>Qty</th>
+				<th>Satuan</th>
+				<th>Harga Satuan</th>
+				<th>Jumlah</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for item in doc.items %}
+			<tr>
+				<td>{{ loop.index }}</td>
+				<td>{{ item.item_name }}</td>
+				<td style="text-align:right;">{{ item.qty }}</td>
+				<td>{{ item.uom }}</td>
+				<td style="text-align:right;">{{ frappe.utils.fmt_money(item.rate, currency=doc.currency) }}</td>
+				<td style="text-align:right;">{{ frappe.utils.fmt_money(item.amount, currency=doc.currency) }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<table style="width:60%; border-collapse:collapse; margin-top:16px; margin-left:auto;">
+		<tr>
+			<td><strong>Jumlah DPP</strong></td>
+			<td style="text-align:right;">{{ frappe.utils.fmt_money(doc.net_total, currency=doc.currency) }}</td>
+		</tr>
+		<tr>
+			<td><strong>PPN</strong></td>
+			<td style="text-align:right;">{{ frappe.utils.fmt_money(doc.total_taxes_and_charges, currency=doc.currency) }}</td>
+		</tr>
+		<tr>
+			<td><strong>Total</strong></td>
+			<td style="text-align:right;">{{ frappe.utils.fmt_money(doc.grand_total, currency=doc.currency) }}</td>
+		</tr>
+	</table>
+</div>
