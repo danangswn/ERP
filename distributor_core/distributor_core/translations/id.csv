@@ -1,0 +1,14 @@
+Source Term,Target Term,Translation
+Retail,Retail,Retail
+Grosir,Grosir,Grosir
+Sub-distributor,Sub-distributor,Sub-distributor
+Sales Visit,Kunjungan Penjualan,Kunjungan Penjualan
+Collection Route,Rute Penagihan,Rute Penagihan
+Price Tier,Tier Harga,Tier Harga
+Credit Limit (IDR),Batas Kredit (IDR),Batas Kredit (IDR)
+Payment Terms (Days),Termin Pembayaran (Hari),Termin Pembayaran (Hari)
+Terbilang (Amount in Words),Terbilang,Terbilang
+Faktur Pajak No,Nomor Faktur Pajak,Nomor Faktur Pajak
+Check In,Masuk,Masuk
+Check Out,Keluar,Keluar
+Cash Collected,Uang Diterima,Uang Diterima
